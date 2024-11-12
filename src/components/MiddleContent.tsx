@@ -65,18 +65,22 @@ const CategoriesComponent = ({ title, icon }: CategoriesComponentProps) => {
 
 const MiddleContent = () => {
 	return (
-		<Stack w='650px'>
+		<Stack w='95%' maxW={800}>
 			<Center>
 				<Heading size={'3xl'} pb={2}>
 					What can I help with?
 				</Heading>
 			</Center>
-			<InputContent />
-			<HStack gap={2}>
-				{listCategories.map((category, index) => (
-					<CategoriesComponent key={index} {...category} />
-				))}
-			</HStack>
+			<Box pb={3}>
+				<InputContent />
+			</Box>
+			<Center>
+				<HStack gap={2}>
+					{listCategories.map((category, index) => (
+						<CategoriesComponent key={index} {...category} />
+					))}
+				</HStack>
+			</Center>
 		</Stack>
 	)
 }
